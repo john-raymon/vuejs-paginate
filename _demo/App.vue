@@ -13,14 +13,19 @@
         :container-class="'pagination'"
         :page-class="'page-item'"
         :page-link-class="'page-link-item'"
-        :prev-class="'prev-item'"
-        :prev-link-class="'prev-link-item'"
-        :next-class="'next-item'"
-        :next-link-class="'next-link-item'"
         :break-view-class="'break-view'"
         :break-view-link-class="'break-view-link'"
         :first-last-button="true"
-      ></paginate>
+      >
+        <template #prevContent>
+          <BaseTab
+            :disabled="disabled"
+            :active="active"
+          >
+            Tab Label
+          </BaseTab>
+        </template>
+      </paginate>
     </div>
 
     <div>
@@ -88,7 +93,12 @@
 </template>
 
 <script>
+import { BaseTab } from '@chec/ui-library';
+
 export default {
+  components: {
+    BaseTab
+  },
   data() {
     return {
       page: 1
