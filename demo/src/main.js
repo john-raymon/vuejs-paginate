@@ -1,5 +1,5 @@
 import Vue from 'vue'
-const Paginate = require('vuejs-paginate');
+import {Paginate} from 'vuejs-paginate'
 import App from './App.vue'
 
 Vue.component('paginate', Paginate)

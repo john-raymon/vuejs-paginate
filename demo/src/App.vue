@@ -18,10 +18,7 @@
         :first-last-button="true"
       >
         <template #prevContent>
-          <BaseTab
-            :disabled="disabled"
-            :active="active"
-          >
+          <BaseTab>
             Tab Label
           </BaseTab>
         </template>
@@ -97,7 +94,7 @@ import { BaseTab } from '@chec/ui-library';
 
 export default {
   components: {
-    BaseTab
+    BaseTab,
   },
   data() {
     return {

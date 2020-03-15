@@ -1,55 +1,42 @@
 {
   "name": "vuejs-paginate",
-  "version": "2.1.0",
-  "description": "A simple pagination component for Vue.js",
-  "main": "dist/index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "rm -rf ./dist && webpack --config ./webpack.config.js",
-    "test": "BABEL_ENV=test ./node_modules/karma/bin/karma start test/karma.conf.js --single-run",
-    "demo:serve": "cd demo && npm install && npm run serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lokyoung/vuejs-paginate.git"
-  },
-  "keywords": [
-    "vue",
-    "paginate",
-    "pagination"
-  ],
-  "author": "Cain Liu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lokyoung/vuejs-paginate/issues"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-istanbul": "^4.0.0",
-    "babel-preset-es2015": "^6.18.0",
-    "chai": "^3.5.0",
-    "css-loader": "^0.26.1",
-    "karma": "^1.4.1",
-    "karma-chai": "^0.1.0",
-    "karma-coverage": "^1.1.1",
-    "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-sinon-chai": "^1.2.4",
-    "karma-spec-reporter": "0.0.26",
-    "karma-webpack": "^2.0.2",
-    "mocha": "^3.2.0",
-    "phantomjs-prebuilt": "^2.1.14",
-    "sinon": "^1.17.7",
-    "sinon-chai": "^2.8.0",
-    "vue": "^2.3.4",
-    "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.3.4",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^2.6.1"
+    "demo:serve": "cd demo && yarn serve",
+    "lint": "vue-cli-service lint",
+    "lint:fix": "vue-cli-service lint --fix",
+    "build-lib": "vue-cli-service build --target lib --name vuejs-paginate src/index.js"
   },
   "dependencies": {
-    "@chec/ui-library": "github:chec/ui-library"
-  }
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.2.0",
+    "@vue/cli-plugin-eslint": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

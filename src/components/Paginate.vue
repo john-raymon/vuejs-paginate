@@ -48,6 +48,7 @@
 
 <script>
 export default {
+  name: 'Paginate',
   props: {
     value: {
       type: Number

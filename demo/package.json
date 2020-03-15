@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@chec/ui-library": "github:chec/ui-library",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
