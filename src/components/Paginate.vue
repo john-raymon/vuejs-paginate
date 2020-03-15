@@ -11,8 +11,9 @@
 
     <li v-for="page in pages" :class="[pageClass, page.selected ? activeClass : '', page.disabled ? disabledClass : '', page.breakView ? breakViewClass: '']">
       <a v-if="page.breakView" :class="[pageLinkClass, breakViewLinkClass]" tabindex="0"><slot name="breakViewContent">{{ breakViewText }}</slot></a>
-      <a v-else-if="page.disabled" :class="pageLinkClass" tabindex="0">{{ page.content }}</a>
-      <a v-else @click="handlePageSelected(page.index + 1)" @keyup.enter="handlePageSelected(page.index + 1)" :class="pageLinkClass" tabindex="0">{{ page.content }}</a>
+      <a @click="!page.disabled && handlePageSelected(page.index + 1)" @keyup.enter="!page.disabled && handlePageSelected(page.index + 1)" :class="pageLinkClass" tabindex="0">
+        <slot :name="page.content" :page="page">{{page.content}}</slot>
+      </a>
     </li>
 
     <li v-if="!(lastPageSelected() && hidePrevNext)" :class="[nextClass, lastPageSelected() ? disabledClass : '']">

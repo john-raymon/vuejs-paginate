@@ -15,8 +15,12 @@
         :page-link-class="'page-link-item'"
         :break-view-class="'break-view'"
         :break-view-link-class="'break-view-link'"
-        :first-last-button="true"
       >
+        <template v-for="pageNumber in 20" v-slot:[pageNumber]="{ page }">
+          <BaseTab :key="pageNumber">
+            {{ page.content }}
+          </BaseTab>
+        </template>
         <template #prevContent>
           <BaseTab>
             Tab Label
